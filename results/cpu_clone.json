@@ -1,0 +1,91 @@
+{
+ "tag": "cpu_clone",
+ "args": {
+  "backend": null,
+  "device": "cpu",
+  "weights": "packed",
+  "decoder": null,
+  "voice": "Bruno",
+  "reference": "ref/reference.wav",
+  "reference_text": "ref/reference.txt",
+  "runs": 2,
+  "tag": "cpu_clone",
+  "threads": 0
+ },
+ "torch": "2.14.1",
+ "torch_threads": 12,
+ "machine": "macOS-15.6.1-arm64-arm-64bit",
+ "load_s": 7.17,
+ "median_rtf_warm": 3.193,
+ "min_rtf": 2.747,
+ "max_rtf": 3.48,
+ "median_gen_s_warm": 18.352,
+ "peak_rss_gb": 6.96,
+ "rows": [
+  {
+   "run": 0,
+   "sentence": 1,
+   "gen_s": 30.886,
+   "audio_s": 7.16,
+   "rtf": 4.314
+  },
+  {
+   "run": 0,
+   "sentence": 2,
+   "gen_s": 23.962,
+   "audio_s": 6.2,
+   "rtf": 3.865
+  },
+  {
+   "run": 0,
+   "sentence": 3,
+   "gen_s": 20.216,
+   "audio_s": 5.32,
+   "rtf": 3.8
+  },
+  {
+   "run": 1,
+   "sentence": 1,
+   "gen_s": 22.655,
+   "audio_s": 7.0,
+   "rtf": 3.236
+  },
+  {
+   "run": 1,
+   "sentence": 2,
+   "gen_s": 17.924,
+   "audio_s": 5.84,
+   "rtf": 3.069
+  },
+  {
+   "run": 1,
+   "sentence": 3,
+   "gen_s": 16.841,
+   "audio_s": 4.84,
+   "rtf": 3.48
+  },
+  {
+   "run": 2,
+   "sentence": 1,
+   "gen_s": 25.751,
+   "audio_s": 8.28,
+   "rtf": 3.11
+  },
+  {
+   "run": 2,
+   "sentence": 2,
+   "gen_s": 18.352,
+   "audio_s": 6.68,
+   "rtf": 2.747
+  },
+  {
+   "run": 2,
+   "sentence": 3,
+   "gen_s": 15.965,
+   "audio_s": 5.0,
+   "rtf": 3.193
+  }
+ ],
+ "when": "2026-10-23 21:06:06 BST",
+ "peak_memory_footprint_gb": 4.08
+}

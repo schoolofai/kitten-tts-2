@@ -1,0 +1,6 @@
+.venv*/
+out/
+*.log
+ref/*.wav
+ref/*.txt
+__pycache__/

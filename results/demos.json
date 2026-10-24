@@ -1,0 +1,63 @@
+[
+ {
+  "name": "d_plain",
+  "text": "We won. I can hardly believe it.",
+  "kw": {
+   "voice": "Kiki"
+  },
+  "gen_s": 1.07,
+  "audio_s": 3.16,
+  "rtf": 0.339
+ },
+ {
+  "name": "d_tagged",
+  "text": "[excited] We won <laugh> I can hardly believe it.",
+  "kw": {
+   "voice": "Kiki"
+  },
+  "gen_s": 0.94,
+  "audio_s": 4.36,
+  "rtf": 0.216
+ },
+ {
+  "name": "d_emph",
+  "text": "I told you (((never))) to open that door.",
+  "kw": {
+   "voice": "Victor"
+  },
+  "gen_s": 1.05,
+  "audio_s": 4.04,
+  "rtf": 0.259
+ },
+ {
+  "name": "d_german",
+  "text": "Guten Morgen. Ich w\u00fcnsche dir einen wundersch\u00f6nen Tag.",
+  "kw": {
+   "voice": "German",
+   "normalize": false
+  },
+  "gen_s": 1.66,
+  "audio_s": 4.28,
+  "rtf": 0.389
+ },
+ {
+  "name": "d_clone",
+  "text": "This voice was cloned from a sixteen second clip, right here on a laptop.",
+  "kw": {
+   "reference": "ref/reference.wav"
+  },
+  "gen_s": 1.49,
+  "audio_s": 6.12,
+  "rtf": 0.244
+ },
+ {
+  "name": "d_long_clone",
+  "text": "Here is a longer passage, to see how the model copes with more than one sentence. The library splits long text on sentence boundaries and generates it chunk by chunk. Then it joins the pieces, trims the silence at each edge, and adds short fades, so the seams should be hard to hear. That matters, because the team says the model can drift into repetition when it is asked for a whole script in one pass. So if you are building an audiobook or a long narration, this chunking is doing a lot of quiet work for you.",
+  "kw": {
+   "reference": "ref/reference.wav"
+  },
+  "gen_s": 7.04,
+  "audio_s": 35.54,
+  "rtf": 0.198
+ }
+]
