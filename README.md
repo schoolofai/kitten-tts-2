@@ -1,10 +1,10 @@
 # Kitten-TTS 2 on a Mac: voice cloning, speed and memory, measured
 
-▶ **Video:** VIDEO_URL_TBD (ProAI Clips)
+▶ **Video:** https://youtu.be/UWT9aXJOeL8 (ProAI Clips)
 
 The scripts behind the ProAI Clips hands-on with [Kitten-TTS 2](https://huggingface.co/KittenML/kitten-tts-2), KittenML's 1.7B open-weight text-to-speech model. They time the model three ways on Apple silicon (PyTorch on the CPU, MLX on the GPU, and KittenML's C++ runtime), log peak memory, and run the cloning and expression-tag demos from the video.
 
-## Quick start (video: [0:34](VIDEO_URL_TBD?t=34))
+## Quick start (video: [0:34](https://youtu.be/UWT9aXJOeL8?t=34))
 
 ```bash
 git clone https://github.com/schoolofai/kitten-tts-2
@@ -19,9 +19,9 @@ Expected output: one `RESULT {...}` line per test plus a `peak memory footprint`
 
 ## Step by step
 
-Which Mac you need (video: [0:40](VIDEO_URL_TBD?t=40)): on our M4 Max the C++ runtime peaked at about 1.4 GB and MLX at about 5.5 GB, so the C++ path fits an 8 GB Mac and MLX a 16 GB Mac. Only the M4 Max was measured; other chips will be slower.
+Which Mac you need (video: [0:40](https://youtu.be/UWT9aXJOeL8?t=40)): on our M4 Max the C++ runtime peaked at about 1.4 GB and MLX at about 5.5 GB, so the C++ path fits an 8 GB Mac and MLX a 16 GB Mac. Only the M4 Max was measured; other chips will be slower.
 
-### 1. First voice, plain PyTorch install (video: [2:46](VIDEO_URL_TBD?t=166))
+### 1. First voice, plain PyTorch install (video: [2:46](https://youtu.be/UWT9aXJOeL8?t=166))
 
 ```bash
 uv venv -p 3.12 .venv && VIRTUAL_ENV=$PWD/.venv uv pip install kittenml soundfile
@@ -30,7 +30,7 @@ uv venv -p 3.12 .venv && VIRTUAL_ENV=$PWD/.venv uv pip install kittenml soundfil
 
 Expected: three JSON lines per run (`{"run": 0, "sentence": 1, "gen_s": ..., "audio_s": ..., "rtf": ...}`), run 0 is the warm-up, then `RESULT {"tag": "cpu_voice", ... "median_rtf_warm": ...}`. On our M4 Max: median RTF 2.151 (0.46x real time).
 
-### 2. Cloning (video: [3:21](VIDEO_URL_TBD?t=201))
+### 2. Cloning (video: [3:21](https://youtu.be/UWT9aXJOeL8?t=201))
 
 Put a 5-30 second clip of one speaker at `ref/reference.wav` (and, optionally, its exact transcript at `ref/reference.txt` so the model skips transcription).
 
@@ -41,7 +41,7 @@ Put a 5-30 second clip of one speaker at `ref/reference.wav` (and, optionally, i
 
 Expected: `RESULT {"tag": "cpu_clone", ...}`, then `sim.py` prints a speaker-similarity score per file (open-source Resemblyzer encoder; install it with `uv pip install resemblyzer` in that venv). Our clones scored about 0.91 against the reference; a built-in voice scored about 0.55.
 
-### 3. Speed test: PyTorch vs C++ vs MLX (video: [4:23](VIDEO_URL_TBD?t=263))
+### 3. Speed test: PyTorch vs C++ vs MLX (video: [4:23](https://youtu.be/UWT9aXJOeL8?t=263))
 
 ```bash
 uv venv -p 3.12 .venv-cpp && VIRTUAL_ENV=$PWD/.venv-cpp uv pip install kitten_tts_cpp soundfile
@@ -54,7 +54,7 @@ uv venv -p 3.12 .venv-mlx && VIRTUAL_ENV=$PWD/.venv-mlx uv pip install "kittenml
 
 Three fixed sentences, three runs each, first run discarded as warm-up. Expected: a `RESULT` line per test. Ours are in the table below.
 
-### 4. Expression tags and the long passage (video: [6:12](VIDEO_URL_TBD?t=372))
+### 4. Expression tags and the long passage (video: [6:12](https://youtu.be/UWT9aXJOeL8?t=372))
 
 ```bash
 .venv-mlx/bin/python demos.py
@@ -77,7 +77,7 @@ MacBook Pro, Apple M4 Max (12P+4E cores), 128 GB unified memory, macOS 15.6.1. k
 
 A 35.5-second cloned passage on MLX took 7.0 seconds.
 
-## Limits (video: [6:50](VIDEO_URL_TBD?t=410))
+## Limits (video: [6:50](https://youtu.be/UWT9aXJOeL8?t=410))
 
 - KittenML says long single passes can truncate or drift into repetition; the library splits text by sentence. Our 35-second passage still had one small stumble, so listen back before you publish.
 - The docs say the Python package is for demo use and isn't optimised for speed.
